@@ -1,6 +1,6 @@
 {
   "name": "hardlink",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "Glob files and create hardlinks in another directory.",
   "main": "index.js",
   "bin": "./bin",
