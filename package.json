@@ -1,0 +1,43 @@
+{
+  "name": "hardlink",
+  "version": "1.0.0",
+  "description": "Glob files and create hardlinks in another directory.",
+  "main": "index.js",
+  "scripts": {
+    "test": "nyc ava",
+    "coveralls": "nyc report --reporter=text-lcov | coveralls"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/seangenabe/hardlink.git"
+  },
+  "keywords": [
+    "hardlink",
+    "filesystem",
+    "fs",
+    "copy"
+  ],
+  "author": "Sean Genabe <seangenabe@outlook.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/seangenabe/hardlink/issues"
+  },
+  "homepage": "https://github.com/seangenabe/hardlink#readme",
+  "dependencies": {
+    "mkdirp": "^0.5.1",
+    "mkdirp-promise": "^5.0.1",
+    "p-map": "^1.2.0"
+  },
+  "devDependencies": {
+    "ava": "^0.23.0",
+    "coveralls": "^3.0.0",
+    "mz": "^2.7.0",
+    "nyc": "^11.3.0",
+    "pify": "^3.0.0",
+    "prettier": "^1.8.2",
+    "tempy": "^0.2.1"
+  },
+  "engines": {
+    "node": ">=6.7"
+  }
+}
