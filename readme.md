@@ -39,7 +39,6 @@ You might have an output directory that might contain files from a source direct
 ## Related
 
 * [copy-newer](https://github.com/seangenabe/copy-newer)
-* [hardlink-cli](https://github.com/seangenabe/hardlink-cli)
 
 ## License 
 
