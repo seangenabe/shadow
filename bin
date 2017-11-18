@@ -1,0 +1,4 @@
+#!/usr/bin/env node
+const hardlink = require('./index')
+const [cwd, dest, pattern = '**'] = process.argv.slice(2)
+hardlink(pattern, dest, { cwd })

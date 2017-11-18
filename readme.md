@@ -26,6 +26,12 @@ Parameters:
 
 Returns a promise that resolves when all files have been hardlinked.
 
+## CLI
+
+```bash
+hardlink <cwd> <dest> [pattern = **]
+```
+
 ## Use case
 
 You might have an output directory that might contain files from a source directory. In that case, a symbolic link or junction to the source directory might be desirable. But if you want to mix and match files from other sources into the output directory, you won't be able to use those. A hardlink for each file might be useful for this case.

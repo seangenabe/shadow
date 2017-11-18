@@ -6,11 +6,11 @@ const pMap = require('p-map')
 const mkdirp = require('mkdirp-promise')
 const Path = require('path')
 
-async function hardlink(src, dest, opts = {}) {
+async function hardlink(pattern, dest, opts = {}) {
   const { cwd = process.cwd() } = opts
   src = src.toString()
   dest = dest.toString()
-  let files = await globby(src, opts)
+  let files = await globby(pattern, opts)
 
   const dirs = new Set()
   async function ensureDirExists(dir) {

@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Glob files and create hardlinks in another directory.",
   "main": "index.js",
+  "bin": "./bin",
   "scripts": {
     "test": "nyc ava",
     "coveralls": "nyc report --reporter=text-lcov | coveralls"
