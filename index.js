@@ -8,7 +8,7 @@ const Path = require('path')
 
 async function hardlink(pattern, dest, opts = {}) {
   const { cwd = process.cwd() } = opts
-  src = src.toString()
+  pattern = pattern.toString()
   dest = dest.toString()
   let files = await globby(pattern, opts)
 
