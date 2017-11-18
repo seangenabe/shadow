@@ -1,5 +1,7 @@
 # hardlink
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/seangenabe/hardlink.svg)](https://greenkeeper.io/)
+
 [![npm](https://img.shields.io/npm/v/hardlink.svg?style=flat-square)](https://www.npmjs.com/package/hardlink)
 [![Travis Build Status](https://img.shields.io/travis/seangenabe/hardlink/master.svg?label=travis&style=flat-square)](https://travis-ci.org/seangenabe/hardlink)
 [![AppVeyor Build Status](https://img.shields.io/appveyor/ci/seangenabe/hardlink/master.svg?label=appveyor&style=flat-square)](https://ci.appveyor.com/project/seangenabe/hardlink)
