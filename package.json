@@ -27,12 +27,12 @@
   "dependencies": {
     "mkdirp": "^0.5.1",
     "mkdirp-promise": "^5.0.1",
+    "mz": "^2.7.0",
     "p-map": "^1.2.0"
   },
   "devDependencies": {
     "ava": "^0.23.0",
     "coveralls": "^3.0.0",
-    "mz": "^2.7.0",
     "nyc": "^11.3.0",
     "pify": "^3.0.0",
     "prettier": "^1.8.2",
