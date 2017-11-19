@@ -6,6 +6,7 @@ const pMap = require('p-map')
 const makeDir = require('make-dir')
 const Path = require('path')
 const cpFile = require('cp-file')
+const trash = require('trash')
 
 async function shadow(pattern, dest, opts = {}) {
   const { cwd = process.cwd(), copyMode } = opts
@@ -28,6 +29,7 @@ async function shadow(pattern, dest, opts = {}) {
       const realfile = `${cwd}/${file}`
       const destpath = `${dest}/${file}`
       await ensureDirExists(`${destpath}/..`)
+      await trash([destpath])
       switch (copyMode) {
         case 'link':
           await FS.link(realfile, destpath)
