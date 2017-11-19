@@ -36,7 +36,7 @@ async function shadow(pattern, dest, opts = {}) {
           await FS.symlink(realfile, destpath)
           break
         default:
-          await cpFile(readfile, destpath)
+          await cpFile(realfile, destpath)
       }
     },
     { concurrency: 32 }
