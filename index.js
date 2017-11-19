@@ -3,11 +3,12 @@
 const globby = require('globby')
 const FS = require('mz/fs')
 const pMap = require('p-map')
-const mkdirp = require('mkdirp-promise')
+const makeDir = require('make-dir')
 const Path = require('path')
+const cpFile = require('cp-file')
 
-async function hardlink(pattern, dest, opts = {}) {
-  const { cwd = process.cwd() } = opts
+async function shadow(pattern, dest, opts = {}) {
+  const { cwd = process.cwd(), copyMode } = opts
   pattern = pattern.toString()
   dest = dest.toString()
   let files = await globby(pattern, opts)
@@ -16,7 +17,7 @@ async function hardlink(pattern, dest, opts = {}) {
   async function ensureDirExists(dir) {
     const realdir = Path.resolve(dir)
     if (!dirs.has(realdir)) {
-      await mkdirp(realdir)
+      await makeDir(realdir)
       dirs.add(realdir)
     }
   }
@@ -27,10 +28,19 @@ async function hardlink(pattern, dest, opts = {}) {
       const realfile = `${cwd}/${file}`
       const destpath = `${dest}/${file}`
       await ensureDirExists(`${destpath}/..`)
-      await FS.link(realfile, destpath)
+      switch (copyMode) {
+        case 'link':
+          await FS.link(realfile, destpath)
+          break
+        case 'symlink':
+          await FS.symlink(realfile, destpath)
+          break
+        default:
+          await cpFile(readfile, destpath)
+      }
     },
     { concurrency: 32 }
   )
 }
 
-module.exports = hardlink
+module.exports = shadow

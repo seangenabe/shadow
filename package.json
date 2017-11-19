@@ -1,7 +1,7 @@
 {
-  "name": "hardlink",
+  "name": "@seangenabe/shadow",
   "version": "1.1.2",
-  "description": "Glob files and create hardlinks in another directory.",
+  "description": "Glob files and copy/symlink/hardlink in another directory.",
   "main": "index.js",
   "bin": "./bin",
   "scripts": {
@@ -14,9 +14,12 @@
   },
   "keywords": [
     "hardlink",
+    "symlink",
+    "link",
     "filesystem",
     "fs",
-    "copy"
+    "copy",
+    "glob"
   ],
   "author": "Sean Genabe <seangenabe@outlook.com>",
   "license": "MIT",
@@ -25,8 +28,8 @@
   },
   "homepage": "https://github.com/seangenabe/hardlink#readme",
   "dependencies": {
-    "mkdirp": "^0.5.1",
-    "mkdirp-promise": "^5.0.1",
+    "cp-file": "^5.0.0",
+    "minimist": "^1.2.0",
     "mz": "^2.7.0",
     "p-map": "^1.2.0"
   },

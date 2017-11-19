@@ -1,40 +1,37 @@
-# hardlink
+# shadow
 
-[![npm](https://img.shields.io/npm/v/hardlink.svg?style=flat-square)](https://www.npmjs.com/package/hardlink)
-[![Travis Build Status](https://img.shields.io/travis/seangenabe/hardlink/master.svg?label=travis&style=flat-square)](https://travis-ci.org/seangenabe/hardlink)
-[![AppVeyor Build Status](https://img.shields.io/appveyor/ci/seangenabe/hardlink/master.svg?label=appveyor&style=flat-square)](https://ci.appveyor.com/project/seangenabe/hardlink)
-[![Dependency Status](https://img.shields.io/david/seangenabe/hardlink.svg?style=flat-square)](https://david-dm.org/seangenabe/hardlink)
-[![devDependency Status](https://img.shields.io/david/dev/seangenabe/hardlink.svg?style=flat-square)](https://david-dm.org/seangenabe/hardlink#info=devDependencies)
-[![node](https://img.shields.io/node/v/hardlink.svg?style=flat-square)](https://nodejs.org/en/download/)
+[![npm](https://img.shields.io/npm/v/@seangenabe/shadow.svg?style=flat-square)](https://www.npmjs.com/package/@seangenabe/@seangenabe/shadow)
+[![Travis Build Status](https://img.shields.io/travis/seangenabe/@seangenabe/shadow/master.svg?label=travis&style=flat-square)](https://travis-ci.org/seangenabe/@seangenabe/shadow)
+[![AppVeyor Build Status](https://img.shields.io/appveyor/ci/seangenabe/@seangenabe/shadow/master.svg?label=appveyor&style=flat-square)](https://ci.appveyor.com/project/seangenabe/@seangenabe/shadow)
+[![Dependency Status](https://img.shields.io/david/seangenabe/@seangenabe/shadow.svg?style=flat-square)](https://david-dm.org/seangenabe/@seangenabe/shadow)
+[![devDependency Status](https://img.shields.io/david/dev/seangenabe/@seangenabe/shadow.svg?style=flat-square)](https://david-dm.org/seangenabe/@seangenabe/shadow#info=devDependencies)
+[![node](https://img.shields.io/node/v/@seangenabe/shadow.svg?style=flat-square)](https://nodejs.org/en/download/)
 
-Glob files and create hardlinks in another directory.
+Glob files and copy/symlink/hardlink in another directory.
 
 ## Usage
 
 ```javascript
-const hardlink = require('hardlink')
+const copy = require('@seangenabe/shadow')
 ```
 
-### hardlink(pattern, dest, opts)
+### copy(pattern, dest, opts)
 
-Globs the current directory (`opts.cwd || process.cwd()`) and hardlinks the globbed files with the globbed folder structure into dest.
+Globs the current directory (`opts.cwd || process.cwd()`) and copies, symlinks, or hardlinks the globbed files with the globbed folder structure into dest.
 
-Parameters: 
+Parameters:
 * pattern - array | string - One or more [glob patterns](https://github.com/isaacs/minimatch#usage) to select the files to link
 * dest - the destination directory
 * opts - [options](https://github.com/sindresorhus/globby#options) to pass to `globby`
+  * copyMode - `'symlink' | 'link'` - Symlink or hardlink the files. If unspecified, will simply copy the files.
 
 Returns a promise that resolves when all files have been hardlinked.
 
 ## CLI
 
 ```bash
-hardlink <cwd> <dest> [pattern = **]
+shadow <cwd> <dest> [pattern = **]
 ```
-
-## Use case
-
-You might have an output directory that might contain files from a source directory. In that case, a symbolic link or junction to the source directory might be desirable. But if you want to mix and match files from other sources into the output directory, you won't be able to use those. A hardlink for each file might be useful for this case.
 
 ## Related
 
