@@ -1,4 +1,6 @@
 #!/usr/bin/env node
 const hardlink = require('./index')
-const [cwd, dest, pattern = '**'] = process.argv.slice(2)
-hardlink(pattern, dest, { cwd })
+const minimist = require('minimist')
+const args = minimist(process.argv.slice(2), { alias: { mode: 'm' } })
+const [cwd, dest, pattern = '**'] = args._
+hardlink(pattern, dest, { cwd, copyMode: args.mode })

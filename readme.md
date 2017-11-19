@@ -30,9 +30,13 @@ Returns a promise that resolves when all files have been hardlinked.
 
 ## CLI
 
-```bash
-shadow <cwd> <dest> [pattern = **]
 ```
+shadow <cwd> <dest> [pattern = **] [-m|--mode symlink|link]
+```
+
+Options:
+* cwd, dest, pattern - same as above
+* m|mode - copy mode
 
 ## Related
 
