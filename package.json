@@ -29,7 +29,9 @@
   "homepage": "https://github.com/seangenabe/shadow#readme",
   "dependencies": {
     "cp-file": "^5.0.0",
+    "del": "^3.0.0",
     "globby": "^7.1.1",
+    "hard-rejection": "^1.0.0",
     "make-dir": "^1.1.0",
     "minimist": "^1.2.0",
     "mz": "^2.7.0",

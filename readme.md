@@ -25,18 +25,21 @@ Parameters:
 * dest - the destination directory
 * opts - [options](https://github.com/sindresorhus/globby#options) to pass to `globby`
   * copyMode - `'symlink' | 'link'` - Symlink or hardlink the files. If unspecified, will simply copy the files.
+  * fallback - Fall back to copying if there aren't enough permissions to symlink or hardlink (`EPERM`).
 
 Returns a promise that resolves when all files have been hardlinked.
 
 ## CLI
 
 ```
-shadow <cwd> <dest> [pattern = **] [-m|--mode symlink|link]
+shadow <cwd> <dest> [pattern = **]
 ```
 
 Options:
 * cwd, dest, pattern - same as above
-* m|mode - copy mode
+* -m --mode - symlink or hardlink the file
+* -f --fallback - fall back to copying the file on EPERM
+
 
 ## What happened to `hardlink`?
 

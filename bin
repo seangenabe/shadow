@@ -1,6 +1,14 @@
 #!/usr/bin/env node
+
 const hardlink = require('./index')
 const minimist = require('minimist')
-const args = minimist(process.argv.slice(2), { alias: { mode: 'm' } })
+const hardRejection = require('hard-rejection')
+
+hardRejection()
+
+const args = minimist(process.argv.slice(2), {
+  alias: { mode: 'm', fallback: 'f' },
+  boolean: ['fallback']
+})
 const [cwd, dest, pattern = '**'] = args._
-hardlink(pattern, dest, { cwd, copyMode: args.mode })
+hardlink(pattern, dest, { cwd, copyMode: args.mode, fallback: args.fallback })

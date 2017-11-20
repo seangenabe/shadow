@@ -6,10 +6,11 @@ const pMap = require('p-map')
 const makeDir = require('make-dir')
 const Path = require('path')
 const cpFile = require('cp-file')
-const trash = require('trash')
+const del = require('del')
+const log = require('util').debuglog('shadow')
 
 async function shadow(pattern, dest, opts = {}) {
-  const { cwd = process.cwd(), copyMode } = opts
+  const { cwd = process.cwd(), copyMode, fallback } = opts
   pattern = pattern.toString()
   dest = dest.toString()
   let files = await globby(pattern, opts)
@@ -25,20 +26,23 @@ async function shadow(pattern, dest, opts = {}) {
 
   await pMap(
     files,
-    async file => {
-      const realfile = `${cwd}/${file}`
+    async (file, idx) => {
+      const realfile = Path.resolve(`${cwd}/${file}`)
       const destpath = `${dest}/${file}`
       await ensureDirExists(`${destpath}/..`)
-      await trash([destpath])
-      switch (copyMode) {
-        case 'link':
-          await FS.link(realfile, destpath)
-          break
-        case 'symlink':
-          await FS.symlink(realfile, destpath)
-          break
-        default:
-          await cpFile(realfile, destpath)
+      await del([destpath])
+      if (copyMode === 'link' || copyMode === 'symlink') {
+        try {
+          await FS[copyMode](realfile, destpath)
+        } catch (err) {
+          if (err.code === 'EPERM' && fallback) {
+            await cpFile(realfile, destpath)
+          } else {
+            throw err
+          }
+        }
+      } else {
+        await cpFile(realfile, destpath)
       }
     },
     { concurrency: 32 }
