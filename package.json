@@ -39,7 +39,7 @@
     "trash": "^4.1.0"
   },
   "devDependencies": {
-    "ava": "^0.24.0",
+    "ava": "^0.25.0",
     "coveralls": "^3.0.0",
     "nyc": "^11.3.0",
     "prettier": "^1.8.2",
