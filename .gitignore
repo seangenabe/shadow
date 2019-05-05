@@ -1,5 +1,8 @@
 node_modules/
-*.log
-*.log.*
 coverage
 .nyc_output
+**/*.d.ts
+**/*.d.ts.map
+**/*.js
+**/*.js.map
+*.tgz

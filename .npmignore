@@ -1,0 +1,11 @@
+.nyc_output/**
+.vscode/**
+coverage/**
+.gitattributes
+tsconfig.json
+**/*.ts
+!**/*.d.ts
+*.tgz
+.prettier*
+.travis.yml
+appveyor.yml

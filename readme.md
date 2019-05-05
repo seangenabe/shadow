@@ -13,10 +13,10 @@ Glob files and copy/symlink/hardlink in another directory.
 ## Usage
 
 ```javascript
-const copy = require('@seangenabe/shadow')
+import { shadow } from "@seangenabe/shadow"
 ```
 
-### copy(pattern, dest, opts)
+### shadow(pattern, dest, opts)
 
 Globs the current directory (`opts.cwd || process.cwd()`) and copies, symlinks, or hardlinks the globbed files with the globbed folder structure into dest.
 
