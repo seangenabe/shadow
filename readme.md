@@ -1,8 +1,7 @@
 # shadow
 
 [![npm](https://img.shields.io/npm/v/@seangenabe/shadow.svg?style=flat-square)](https://www.npmjs.com/package/@seangenabe/shadow)
-[![Travis Build Status](https://img.shields.io/travis/seangenabe/shadow/master.svg?label=travis&style=flat-square)](https://travis-ci.org/seangenabe/shadow)
-[![AppVeyor Build Status](https://img.shields.io/appveyor/ci/seangenabe/shadow/master.svg?label=appveyor&style=flat-square)](https://ci.appveyor.com/project/seangenabe/shadow)
+[![Build Status](https://img.shields.io/travis/seangenabe/shadow/master.svg&style=flat-square)](https://travis-ci.org/seangenabe/shadow)
 [![Coveralls](https://img.shields.io/coveralls/github/seangenabe/shadow.svg?style=flat-square)](https://coveralls.io/github/seangenabe/shadow)
 [![Dependency Status](https://img.shields.io/david/seangenabe/shadow.svg?style=flat-square)](https://david-dm.org/seangenabe/@seangenabe/shadow)
 [![devDependency Status](https://img.shields.io/david/dev/seangenabe/shadow.svg?style=flat-square)](https://david-dm.org/seangenabe/@seangenabe/shadow#info=devDependencies)
