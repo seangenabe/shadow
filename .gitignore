@@ -6,3 +6,4 @@ coverage
 **/*.js
 **/*.js.map
 *.tgz
+*.tsbuildinfo

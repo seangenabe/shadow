@@ -2,34 +2,35 @@
   "name": "@seangenabe/shadow",
   "version": "5.0.1",
   "description": "Glob files and copy/symlink/hardlink in another directory.",
-  "main": "index.js",
-  "bin": "./bin",
-  "scripts": {
-    "build": "tsc",
-    "watch": "tsc -w",
-    "pretest": "npm run build",
-    "test": "nyc ava",
-    "coveralls": "nyc report --reporter=text-lcov | coveralls"
+  "keywords": [
+    "copy",
+    "filesystem",
+    "fs",
+    "glob",
+    "hardlink",
+    "link",
+    "symlink"
+  ],
+  "homepage": "https://github.com/seangenabe/shadow#readme",
+  "bugs": {
+    "url": "https://github.com/seangenabe/shadow/issues"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/seangenabe/shadow.git"
   },
-  "keywords": [
-    "hardlink",
-    "symlink",
-    "link",
-    "filesystem",
-    "fs",
-    "copy",
-    "glob"
-  ],
-  "author": "Sean Genabe <seangenabe@outlook.com>",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/seangenabe/shadow/issues"
+  "author": "Sean Genabe <seangenabe@outlook.com>",
+  "main": "index.js",
+  "bin": "./bin",
+  "scripts": {
+    "build": "tsc",
+    "coveralls": "nyc report --reporter=text-lcov | coveralls",
+    "prepublishOnly": "npm run build",
+    "pretest": "npm run build",
+    "test": "nyc ava",
+    "watch": "tsc -w"
   },
-  "homepage": "https://github.com/seangenabe/shadow#readme",
   "dependencies": {
     "del": "^5.1.0",
     "globby": "^10.0.1",

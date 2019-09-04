@@ -10,3 +10,4 @@ tsconfig.json
 .prettier*
 .travis.yml
 appveyor.yml
+*.tsbuildinfo
