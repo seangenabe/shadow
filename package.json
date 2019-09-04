@@ -22,7 +22,7 @@
   "license": "MIT",
   "author": "Sean Genabe <seangenabe@outlook.com>",
   "main": "index.js",
-  "bin": "./bin",
+  "bin": "./bin.js",
   "scripts": {
     "build": "tsc",
     "coveralls": "nyc report --reporter=text-lcov | coveralls",
@@ -41,6 +41,7 @@
   },
   "devDependencies": {
     "@types/del": "^4.0.0",
+    "@types/minimist": "^1.2.0",
     "@types/node": "^12.7.4",
     "ava": "^2.3.0",
     "coveralls": "^3.0.6",

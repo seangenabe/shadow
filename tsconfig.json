@@ -9,7 +9,8 @@
     "declaration": true,
     "declarationMap": true,
     "esModuleInterop": true,
-    "incremental": true
+    "incremental": true,
+    "newLine": "lf"
   },
   "include": [
     "**/*"
