@@ -1,6 +1,7 @@
 .nyc_output/**
 .vscode/**
 coverage/**
+test/**
 .gitattributes
 tsconfig.json
 **/*.ts
