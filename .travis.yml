@@ -4,5 +4,6 @@ os:
   - windows
 node_js:
   - '10'
+  - '12'
   - node
 after_success: npm run coveralls
