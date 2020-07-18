@@ -42,12 +42,12 @@
   "devDependencies": {
     "@types/del": "^4.0.0",
     "@types/minimist": "^1.2.0",
-    "@types/node": "^13.1.7",
-    "ava": "^2.3.0",
+    "@types/node": "^14.0.23",
+    "ava": "^3.10.1",
     "coveralls": "^3.0.6",
     "nyc": "^15.0.0",
-    "prettier": "^1.8.2",
-    "tempy": "^0.3.0",
+    "prettier": "^2.0.5",
+    "tempy": "^0.6.0",
     "typescript": "^3.6.2"
   },
   "engines": {
