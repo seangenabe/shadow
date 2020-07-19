@@ -1,6 +1,6 @@
 {
   "name": "@seangenabe/shadow",
-  "version": "6.0.0",
+  "version": "6.0.1",
   "description": "Glob files and copy/symlink/hardlink in another directory.",
   "keywords": [
     "copy",
